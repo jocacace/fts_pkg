@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<launch>
+	<node pkg="fts_pkg" type="fts_data_manager" name="fts_data_manager" output="screen">
+
+		<param name="bias_itr" type="int" value="200" />
+		<param name="fts_topic_in" type="string" value="/iiwa/state/CartesianWrench" />
+		<rosparam param = "rotation_force">[-1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 1.0]</rosparam>
+		<rosparam param = "rotation_torque">[1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0]</rosparam>
+
+		<!--
+		<param name="fts_topic_in" type="string" value="/netft_data" />
+		<rosparam param = "rotation_force">[0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]</rosparam>
+		<rosparam param = "rotation_torque">[1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0]</rosparam>
+		-->
+
+		<param name="fts_topic_out" type="string" value="/fts_data" />
+
+
+
+
+		<param name="force_from_joy" value="false" type="bool" />
+		<param name="fts_f_x_th" value="1.0" type="double" />
+		<param name="fts_f_y_th" value="1.0" type="double" />
+		<param name="fts_f_z_th" value="4.0" type="double" />
+		<param name="fts_t_x_th" value="1.0" type="double" />
+		<param name="fts_t_y_th" value="1.0" type="double" />
+		<param name="fts_t_z_th" value="1.0" type="double" />
+
+	</node>
+</launch>

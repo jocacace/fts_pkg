@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<launch>
+	<node pkg="joy" type="joy_node" name="joy_node" output="screen" />
+	<node pkg="fts_pkg" type="fts_data_manager" name="fts_data_manager" output="screen">
+		<param name="force_from_joy" value="true" type="bool" />
+		<param name="fts_topic_out" type="string" value="/fts_data" />
+	</node>
+</launch>
